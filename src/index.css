@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.bt {
+  margin-left: 20px;
+}
+
+.m__tab {
+  margin-top: 5px;
+}
+
+.m__main {
+  padding-top: 40px;
+}
+
+.declin__bg {
+  background-color: #214c4e;
+  height: 800px;
+}
+
+.main__input {
+  padding-top: 20px;
+}
+
+.header__block {
+  background-color: darkcyan;
+  padding: 20px 30px;
+  margin-left: -15px;
+  margin-right: -15px;
+  /* font-family: 'Poiret One', cursive; */
+  font-family: 'Julius Sans One', sans-serif;
+  color: white;
+
+  font-weight: 1000;
+  letter-spacing: 8px;
+}
+.color__word {
+  color: azure;
+}
+
+.table-dark {
+  background-color: #3c5e61 !important;
+}
