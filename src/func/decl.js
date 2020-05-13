@@ -21,7 +21,7 @@ const items = [
           "š",
           "ž",
           "č",
-          "c"
+          "c",
         ],
         //тут может быть больше одного
 
@@ -64,20 +64,20 @@ const items = [
       {
         end_key: ["y"], //тут может быть больше одного
         nom_sg: { body: " " },
-        acc_sg: { body: "ogo" , cut: true },
+        acc_sg: { body: "ogo", cut: true },
         gen_sg: { body: "ogo", cut: true },
         dat_sg: { body: "omy", cut: true },
-        ins_sg: { body: "um" , cut: true},
+        ins_sg: { body: "um", cut: true },
         loc_sg: { body: "omy", cut: true },
         voc_sg: { body: " " }, //добавить сut: true если надо
 
         nom_pl: { body: "i", cut: true },
-        acc_pl: { body: "ih" , cut: true},
-        gen_pl: { body: "ih" , cut: true},
-        dat_pl: { body: "im" , cut: true},
+        acc_pl: { body: "ih", cut: true },
+        gen_pl: { body: "ih", cut: true },
+        dat_pl: { body: "im", cut: true },
         ins_pl: { body: "imi", cut: true },
-        loc_pl: { body: "im" , cut: true},
-        voc_pl: { body: "i" , cut: true},
+        loc_pl: { body: "im", cut: true },
+        voc_pl: { body: "i", cut: true },
       },
 
       {
@@ -98,7 +98,6 @@ const items = [
         loc_pl: { body: "ah" },
         voc_pl: { body: "y" },
       },
-      
 
       {
         end_key: ["h"], //тут может быть больше одного
@@ -380,7 +379,7 @@ const items = [
           "š",
           "ž",
           "č",
-          "c"
+          "c",
         ],
         //тут может быть больше одного
 
@@ -429,7 +428,7 @@ const items = [
       },
       {
         end_key: ["ov", "òv"], //тут может быть больше одного
-        nom_sg: { body: " "  },
+        nom_sg: { body: " " },
         acc_sg: { body: " " },
         gen_sg: { body: "ve", cut: true },
         dat_sg: { body: "vi", cut: true },
@@ -502,8 +501,6 @@ const items = [
         voc_pl: { body: "i" },
       },
 
-    
-
       {
         end_key: ["i"], //тут может быть больше одного
         nom_sg: { body: " " },
@@ -548,7 +545,6 @@ const items = [
         loc_pl: { body: "ah", cut: true },
         voc_pl: { body: "a", cut: true },
       },
-      
 
       {
         end_key: ["e", "ę"], //тут может быть больше одного
@@ -707,7 +703,7 @@ const items = [
           "š",
           "ž",
           "č",
-          "c"
+          "c",
         ],
         nom_sg: { body: " " },
         acc_sg: { body: "a" },
@@ -745,13 +741,12 @@ const items = [
       {
         end_key: ["y"], //тут может быть больше одного
         nom_sg: { body: " " },
-        acc_sg: { body: "ogo" , cut: true },
+        acc_sg: { body: "ogo", cut: true },
         gen_sg: { body: "ogo", cut: true },
         dat_sg: { body: "omy", cut: true },
-        ins_sg: { body: "um" , cut: true},
+        ins_sg: { body: "um", cut: true },
         loc_sg: { body: "omy", cut: true },
         voc_sg: { body: " " }, //добавить сut: true если надо
-
       },
 
       {
@@ -848,7 +843,7 @@ const items = [
         voc_sg: { body: "o", cut: true }, //добавить сut: true если надо
       },
       {
-        end_key: ["ov","òv"], //тут может быть больше одного
+        end_key: ["ov", "òv"], //тут может быть больше одного
         nom_sg: { body: " " },
         acc_sg: { body: " " },
         gen_sg: { body: "ve", cut: true },
@@ -1051,7 +1046,18 @@ const items = [
     gender: "indecl.",
     sg: true,
     pl: true,
-   
+    ends: [
+      {
+        end_key: [" "],
+        nom_pl: { body: "" },
+        acc_pl: { body: " " },
+        gen_pl: { body: " ", cut: true },
+        dat_pl: { body: "am", cut: true },
+        ins_pl: { body: "ami", cut: true },
+        loc_pl: { body: "ah", cut: true },
+        voc_pl: { body: "" },
+      },
+    ],
   },
 ];
 

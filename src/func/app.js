@@ -5,13 +5,16 @@ const unique = ["nebo", "oko", "uho", "děte", "člověk"];
 
 export const main = (word) => {
   const checkUnique = unique.some((uniqueWord) => {
-    return word == uniqueWord;
+    return word === uniqueWord;
   });
 
   let uniqueResult = null;
+  console.log({ checkUnique });
 
   if (checkUnique) {
     decl.map((el) => {
+      console.log({ el });
+
       // el.ends = [{}, {}]
       el.ends.map((item) => {
         // item.end_key = ["", ""]

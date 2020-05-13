@@ -1,8 +1,9 @@
 import React from "react";
 import { main, proposalFunc } from "../func/app";
-import { Container, Row, Col, InputGroup, FormControl, Button} from "react-bootstrap";
+import { Container, Row, Col, InputGroup, FormControl } from "react-bootstrap";
 import Items from "./Items";
 import Header from "./Header";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -26,8 +27,6 @@ class App extends React.Component {
   async findWord(word) {
     const result = main(word);
     if (result.success) {
-      console.log(result);
-
       this.setState({ info: result.body, showInfo: true, word });
     } else {
       const proposal = await proposalFunc(word);
@@ -38,21 +37,23 @@ class App extends React.Component {
   render() {
     const propItems = this.state.proposal.map((el, i) => {
       return (
-        <p key={i} className="color__word" value={el} onClick={this.handlePropose.bind(this)}>
+        <p
+          key={i}
+          className="color__word"
+          value={el}
+          onClick={this.handlePropose.bind(this)}
+        >
           {el}
         </p>
       );
     });
 
     return (
-      <Container fluid={true} className="declin__bg">
-        <Header />
+      <div>
         <Row className="d-flex justify-content-center m__main ">
-          
-          <Col  className="main__input" md={4}>
+          <Col className="main__input" md={4}>
             <InputGroup className="mb-3">
               <FormControl
-              
                 value={this.state.word}
                 onChange={this.handleInput.bind(this)}
                 placeholder="...enter word"
@@ -60,21 +61,15 @@ class App extends React.Component {
                 aria-describedby="basic-addon1"
               />
             </InputGroup>
-            {!this.state.showInfo ? propItems : null} 
-
-            
+            {!this.state.showInfo ? propItems : null}
           </Col>
-         {/* <Col md={1}><div>
-  <Button className="bt" variant="warning">Decline</Button>
-</div></Col> */}
         </Row>
         <Row className="justify-content-center ">
           <Col md={5}>
             <Items info={this.state.info}></Items>
           </Col>
         </Row>
-         
-      </Container>
+      </div>
     );
   }
 }
