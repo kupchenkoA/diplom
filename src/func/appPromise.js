@@ -30,13 +30,39 @@ export const main = (word) => {
       const findWord = dictionary[index]; //word and its type
 
       //находим по гендеру
-      const findDecl = decl.filter((el) => {
+      const findDecl = decl.filter((el, i) => {
         return findWord.type == el.gender;
       })[0];
 
       const correctEnd = find(word, findDecl);
 
       if (findDecl) {
+        if (findDecl.gender == "indecl.") {
+          const indeclItem = {
+            indexOfEnd: 0,
+            sg: true,
+            pl: true,
+            nom_sg: { body: " " },
+            acc_sg: { body: "" },
+            gen_sg: { body: "" },
+            dat_sg: { body: "" },
+            ins_sg: { body: "" },
+            loc_sg: { body: "" },
+            voc_sg: { body: "" },
+
+            nom_pl: { body: "" },
+            acc_pl: { body: "" },
+            gen_pl: { body: " " },
+            dat_pl: { body: "" },
+            ins_pl: { body: "" },
+            loc_pl: { body: "" },
+            voc_pl: { body: "" },
+            origin_beginning: word,
+            origin_end: " ",
+          };
+          return { success: true, body: indeclItem };
+        }
+
         if (!correctEnd) {
           return {
             success: false,
@@ -65,16 +91,21 @@ const find = (word, findDecl) => {
       let original = word.substr(0, word.length - index);
       //окончание при длинне index
       let end = word.substr(-index);
-
-      let findItem = findDecl.ends.filter((el) => {
+      let indexOfEnd = null;
+      let findItem = findDecl.ends.filter((el, i) => {
         return el.end_key.some((declEnd) => {
+          if (end.trim() == declEnd.trim()) {
+            indexOfEnd = i;
+          }
           return end.trim() == declEnd.trim();
         });
       })[0];
 
       if (findItem) {
         return {
+          groupEnds: findDecl.ends[indexOfEnd],
           ...findItem,
+          indexOfEnd,
           origin_beginning: word.substr(0, word.length - index),
           origin_end: word.substr(-index),
           sg: findDecl.sg,
