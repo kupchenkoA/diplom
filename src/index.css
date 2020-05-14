@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
 
 body {
   margin: 0;
@@ -8,6 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #214c4e;
 }
 
 code {
@@ -29,7 +30,8 @@ code {
 
 .declin__bg {
   background-color: #214c4e;
-  height: 800px;
+  min-height: 800px;
+  color: #fff;
 }
 
 .main__input {
@@ -42,7 +44,7 @@ code {
   margin-left: -15px;
   margin-right: -15px;
   /* font-family: 'Poiret One', cursive; */
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   color: white;
 
   font-weight: 1000;
@@ -54,4 +56,13 @@ code {
 
 .table-dark {
   background-color: #3c5e61 !important;
+}
+
+.menu_btn {
+  margin: 10px;
+}
+
+.menu_link {
+  color: black !important;
+  text-decoration: none !important;
 }

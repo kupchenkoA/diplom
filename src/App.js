@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
 import Home from "./components/Home";
+import ByGroup from "./components/ByGroup";
 import ByType from "./components/ByType";
+
 import Header from "./components/Header";
 
 class App extends React.Component {
@@ -14,6 +16,11 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route path="/" exact render={(props) => <Home {...props} />} />
+            <Route
+              path="/group"
+              exact
+              render={(props) => <ByGroup {...props} />}
+            />
             <Route
               path="/type"
               exact
