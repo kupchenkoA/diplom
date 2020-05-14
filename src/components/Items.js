@@ -162,8 +162,6 @@ class Items extends React.Component {
   }
 
   render() {
-    console.log("INFO");
-    console.log(this.props.info);
     let test = null;
     if (this.props.info.origin_beginning) {
       test = (

@@ -47,6 +47,31 @@ export const main = (word) => {
       //console.log({ findDecl });
 
       if (findDecl) {
+        if (findDecl.gender == "indecl.") {
+          const indeclItem = {
+            indexOfEnd: 0,
+            sg: true,
+            pl: true,
+            nom_sg: { body: " " },
+            acc_sg: { body: "" },
+            gen_sg: { body: "" },
+            dat_sg: { body: "" },
+            ins_sg: { body: "" },
+            loc_sg: { body: "" },
+            voc_sg: { body: "" },
+
+            nom_pl: { body: "" },
+            acc_pl: { body: "" },
+            gen_pl: { body: " " },
+            dat_pl: { body: "" },
+            ins_pl: { body: "" },
+            loc_pl: { body: "" },
+            voc_pl: { body: "" },
+            origin_beginning: word,
+            origin_end: " ",
+          };
+          return { success: true, body: indeclItem };
+        }
         // начинаем перебирать отрезая от конца 5, и отнимая 1 от 5 каждый цикл
         for (let index = 5; index > 0; index--) {
           // проверяем чтобы слово было длинней окончания

@@ -1049,12 +1049,20 @@ const items = [
     ends: [
       {
         end_key: [" "],
+        nom_sg: { body: " " },
+        acc_sg: { body: "" },
+        gen_sg: { body: "" },
+        dat_sg: { body: "" },
+        ins_sg: { body: "" },
+        loc_sg: { body: "" },
+        voc_sg: { body: "" }, //добавить сut: true если надо
+
         nom_pl: { body: "" },
-        acc_pl: { body: " " },
-        gen_pl: { body: " ", cut: true },
-        dat_pl: { body: "am", cut: true },
-        ins_pl: { body: "ami", cut: true },
-        loc_pl: { body: "ah", cut: true },
+        acc_pl: { body: "" },
+        gen_pl: { body: " " },
+        dat_pl: { body: "" },
+        ins_pl: { body: "" },
+        loc_pl: { body: "" },
         voc_pl: { body: "" },
       },
     ],
