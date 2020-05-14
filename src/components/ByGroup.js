@@ -20,11 +20,12 @@ class ByType extends React.Component {
 
   handleInput(e) {
     this.setState({ currentGender: e.target.value }, async () => {
+      await this.getArrayEnds();
       const genderItems = dictionary.filter((el) => {
         return this.state.currentGender == el.type;
       });
       this.setState({ genderWords: genderItems }, () => {
-        this.formatAll();
+        this.getArrayEnds();
       });
     });
   }
@@ -38,7 +39,38 @@ class ByType extends React.Component {
     const format = this.state.genderWords.map((el, i) => {
       return main(el.word).body;
     });
-    this.setState({ formatInfo: format });
+    this.setState({ formatInfo: format }, () => {
+      this.setState({
+        filterInfo: this.state.formatInfo.filter((el) => {
+          return el.indexOfEnd == this.state.currentEnd;
+        }),
+      });
+    });
+  }
+
+  getArrayEnds() {
+    const newEnds = items
+      .filter((declEl) => {
+        return declEl.gender == this.state.currentGender;
+      })[0]
+      .ends.map((end) => {
+        return end;
+      });
+    this.setState({ currentEnds: newEnds }, () => {
+      this.setState({ currentEnd: 0 }, () => {
+        this.formatAll();
+      });
+    });
+  }
+
+  handleEnd(e) {
+    this.setState({ currentEnd: Number.parseInt(e.target.value) }, () => {
+      this.setState({
+        filterInfo: this.state.formatInfo.filter((el) => {
+          return el.indexOfEnd == this.state.currentEnd;
+        }),
+      });
+    });
   }
 
   render() {
@@ -47,7 +79,7 @@ class ByType extends React.Component {
         <Row>
           <Col md={4}>
             <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label>Gender</Form.Label>
+              <Form.Label>By Type</Form.Label>
               <Form.Control
                 as="select"
                 value={this.state.currentGender}
@@ -59,7 +91,7 @@ class ByType extends React.Component {
                       const genderItems = dictionary.filter((el) => {
                         return this.state.currentGender == el.type;
                       });
-
+                      this.getArrayEnds();
                       this.setState({ genderWords: genderItems }, () => {
                         this.formatAll();
                       });
@@ -73,12 +105,31 @@ class ByType extends React.Component {
                 })}
               </Form.Control>
             </Form.Group>
+
+            <Form.Group controlId="exampleForm.ControlSelect1">
+              <Form.Label>By Group</Form.Label>
+              <Form.Control
+                as="select"
+                value={this.state.currentEnd}
+                onChange={this.handleEnd.bind(this)}
+              >
+                {this.state.currentEnds.length > 0
+                  ? this.state.currentEnds.map((end, i) => {
+                      return (
+                        <option value={i} key={i}>
+                          Группа {++i}
+                        </option>
+                      );
+                    })
+                  : null}
+              </Form.Control>
+            </Form.Group>
           </Col>
-          <Col md={4}>{this.state.formatInfo.length}</Col>
+          <Col md={4}>{this.state.filterInfo.length}</Col>
         </Row>
         <Row>
           {this.state.genderWords.length > 0
-            ? this.state.formatInfo.map((el) => {
+            ? this.state.filterInfo.map((el) => {
                 return (
                   <Col md={3}>
                     <p>{el.origin_beginning + el.origin_end}</p>
