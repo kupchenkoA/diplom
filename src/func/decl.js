@@ -1,6 +1,7 @@
 const items = [
   {
     gender: "m.anim.",
+    title: "masculine animate",
     sg: true,
     pl: true, // тут написать как в словаре
     ends: [
@@ -251,6 +252,8 @@ const items = [
 
   {
     gender: "m.",
+    title: "masculine inanimate",
+
     sg: true,
     pl: true,
     ends: [
@@ -405,6 +408,8 @@ const items = [
 
   {
     gender: "f.",
+    title: "feminine",
+
     sg: true,
     pl: true,
     ends: [
@@ -524,6 +529,8 @@ const items = [
 
   {
     gender: "n.",
+    title: "neutral",
+
     sg: true,
     pl: true,
     ends: [
@@ -683,6 +690,9 @@ const items = [
 
   {
     gender: "m.sg.",
+    title: "masculine singularia tantum",
+
+    
     sg: true,
     pl: false,
     ends: [
@@ -829,6 +839,8 @@ const items = [
 
   {
     gender: "f.sg.",
+    title: "feminine singularia tantum",
+
     sg: true,
     pl: false,
     ends: [
@@ -911,6 +923,8 @@ const items = [
 
   {
     gender: "n.sg.",
+    title: "neutral singularia tantum",
+
     sg: true,
     pl: false,
     ends: [
@@ -940,6 +954,8 @@ const items = [
 
   {
     gender: "f.pl.",
+    title: "feminine pluralia tantum",
+
     sg: false,
     pl: true,
     ends: [
@@ -979,6 +995,8 @@ const items = [
 
   {
     gender: "m.pl.",
+    title: "masculine pluralia tantum",
+
     sg: false,
     pl: true,
     ends: [
@@ -1017,6 +1035,8 @@ const items = [
   },
   {
     gender: "n.pl.",
+    title: "neutral pluralia tantum",
+
     sg: false,
     pl: true,
     ends: [
@@ -1044,6 +1064,8 @@ const items = [
   },
   {
     gender: "indecl.",
+    title: "indeclinable",
+
     sg: true,
     pl: true,
     ends: [
