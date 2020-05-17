@@ -68,7 +68,7 @@ class ByType extends React.Component {
                   }
                   return (
                     <option value={el.gender} key={i}>
-                      {el.gender}
+                      {el.title}
                     </option>
                   );
                 })}
