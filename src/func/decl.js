@@ -529,7 +529,7 @@ const items = [
     ends: [
       {
         end_key: ["o"], //тут может быть больше одного
-        nom_sg: { body: " ", cut: true },
+        nom_sg: { body: " " },
         acc_sg: { body: " " },
         gen_sg: { body: "a", cut: true },
         dat_sg: { body: "u", cut: true },
