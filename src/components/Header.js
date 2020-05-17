@@ -6,26 +6,28 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <div className="header__block">DECLINATION SYSTEM </div>
-        <div>
+        <div className="header__block d-flex">DECLINATION SYSTEM 
+        
           {" "}
-          <Button variant="light" className="menu_btn">
-            <Link to="/" className="menu_link">
+          <button variant="light" className="menu_btn">
+            <Link to="/" className=" menu_link__btn">
               Find word
             </Link>
-          </Button>
-          <Button variant="light" className="menu_btn">
+          </button>
+          <button variant="light" className="menu_btn">
             {" "}
-            <Link to="/type" className="menu_link">
+            <Link to="/type" className=" menu_link__btn">
               By Type
             </Link>
-          </Button>
-          <Button variant="light" className="menu_btn">
-            <Link to="/group" className="menu_link">
+          </button>
+          <button variant="light" className="menu_btn">
+            <Link to="/group" className=" menu_link__btn">
               By Group
             </Link>
-          </Button>
+          </button>
+        
         </div>
+        
       </div>
     );
   }

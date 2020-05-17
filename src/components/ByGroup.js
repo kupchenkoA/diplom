@@ -76,10 +76,10 @@ class ByType extends React.Component {
   render() {
     return (
       <div>
-        <Row>
+        <Row className="justify-content-center bytype" >
           <Col md={4}>
-            <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label>By Type</Form.Label>
+          <Form.Group controlId="exampleForm.ControlSelect1">
+              <Form.Label>Choose Type</Form.Label>
               <Form.Control
                 as="select"
                 value={this.state.currentGender}
@@ -105,9 +105,12 @@ class ByType extends React.Component {
                 })}
               </Form.Control>
             </Form.Group>
+          </Col>
+          <Col  md={4}>
+            
 
             <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label>By Group</Form.Label>
+              <Form.Label>Choose Group</Form.Label>
               <Form.Control
                 as="select"
                 value={this.state.currentEnd}
@@ -125,7 +128,7 @@ class ByType extends React.Component {
               </Form.Control>
             </Form.Group>
           </Col>
-          <Col md={4}>{this.state.filterInfo.length}</Col>
+          <Col md={1}>{this.state.filterInfo.length}</Col>
         </Row>
         <Row>
           {this.state.genderWords.length > 0

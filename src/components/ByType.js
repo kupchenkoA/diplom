@@ -44,10 +44,11 @@ class ByType extends React.Component {
   render() {
     return (
       <div>
-        <Row>
+        <Row className="justify-content-center bytype">
+          <Col className ="text_center" md={4}>Choose type</Col>
           <Col md={4}>
             <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label>Gender</Form.Label>
+              
               <Form.Control
                 as="select"
                 value={this.state.currentGender}
@@ -73,6 +74,7 @@ class ByType extends React.Component {
                 })}
               </Form.Control>
             </Form.Group>
+            
           </Col>
           <Col md={4}>{this.state.formatInfo.length}</Col>
         </Row>
